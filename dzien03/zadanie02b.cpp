@@ -2,6 +2,12 @@
 #include <cstdlib>
 #include <ctime>
 
+void narysuj_wykres(int wartosc){
+    for(int i=0; i<wartosc; i++){
+        std::cout << "█";
+    }
+}
+
 int k6(){
     return std::rand() % 6 + 1;
     // zwraca 1, 2, 3, 4, 5 lub 6
@@ -16,7 +22,7 @@ int nk6(int n){
 }
 
 int main(){
-    const int ILE_RZUTOW = 100;
+    const int ILE_RZUTOW = 1000;
     const int ILE_KOSTEK = 4;
     const int MAKSYMALNY_WYNIK = ILE_KOSTEK * 6;
 
@@ -34,7 +40,9 @@ int main(){
     }
 
     for (int i=1; i<=MAKSYMALNY_WYNIK; i++){
-        std::cout << i << ": " << licznik[i] << "\n";
+        std::cout << i << ": ";
+        narysuj_wykres(licznik[i]);
+        std::cout << " " << licznik[i] << "\n";
     }
 
     return 0;
