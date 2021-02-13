@@ -7,6 +7,11 @@ struct Osoba {
     double wzrost;
 };
 
+void wypisz_osobe(Osoba osoba){
+    std::cout << osoba.imie << " " << osoba.nazwisko << ": "
+        << osoba.waga << " " << osoba.wzrost << "\n";
+}
+
 int main(){
     Osoba o1;
     Osoba o2;
@@ -21,8 +26,8 @@ int main(){
     o2.waga = 60;
     o2.wzrost = 1.6;
 
-    std::cout << o1.imie << ": " << o1.waga << " " << o1.wzrost << "\n";
-    std::cout << o2.imie << ": " << o2.waga << " " << o2.wzrost << "\n";
+    wypisz_osobe(o1);
+    wypisz_osobe(o2);
 
     return 0;
 }
