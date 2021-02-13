@@ -39,7 +39,7 @@ int main(){
         licznik[wynik]++;
     }
 
-    for (int i=1; i<=MAKSYMALNY_WYNIK; i++){
+    for (int i=ILE_KOSTEK; i<=MAKSYMALNY_WYNIK; i++){
         std::cout << i << ": ";
         narysuj_wykres(licznik[i]);
         std::cout << " " << licznik[i] << "\n";
