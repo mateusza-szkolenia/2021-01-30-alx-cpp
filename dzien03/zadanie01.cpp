@@ -18,6 +18,7 @@ int main()
 
     int suma;
     int maks, mini;
+    int wieksze=0, mniejsze=0;
     double srednia;
 
     for(int i = 0; i < ILE; i += 1){
@@ -41,10 +42,25 @@ int main()
 
     srednia = 1.0 * suma / ILE;
 
+    for(int i=0; i < ILE; i++){
+        if (liczby[i] > srednia) wieksze++;
+        if (liczby[i] < srednia) mniejsze++;
+    }
+
+
     std::cout << "Suma: " << suma << "\n";
     std::cout << "Średnia: " << srednia << "\n";
     std::cout << "Maksimum: " << maks << "\n";
     std::cout << "Minimum: " << mini << "\n";
+    std::cout << "Powyżej średniej: " << wieksze << "\n";
+    std::cout << "Poniżej średniej: " << mniejsze << "\n";
+
+    for(int i=0; i < ILE; i++){
+        std::cout << liczby[i]
+            << " "
+            << (liczby[i] > srednia ? "wieksza od śr" : (liczby[i] < srednia ? "mniejsza od śr" : "==="))
+            << "\n";
+    }
 
     return 0;
 }
