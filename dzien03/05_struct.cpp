@@ -29,5 +29,15 @@ int main(){
     wypisz_osobe(o1);
     wypisz_osobe(o2);
 
+    Osoba osoby[5];
+    for(int i=0; i<5; i++){
+        osoby[i].imie = "Jan";
+        osoby[i].nazwisko = "XXX";
+        osoby[i].waga = 70 + i;
+        osoby[i].wzrost = 1.75 + i/100.0;
+    }
+
+    wypisz_osobe(osoby[3]);
+
     return 0;
 }
