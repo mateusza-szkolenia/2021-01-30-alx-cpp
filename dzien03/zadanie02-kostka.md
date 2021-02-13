@@ -18,3 +18,5 @@ A następnie "narysuje" wykres przedstawiający rozkład wartości:
 ...
 ```
 
+# Zadanie 2B - `p` rzutów `n` kostkami
+
