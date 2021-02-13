@@ -2,8 +2,13 @@
 
 /*
     uruchomienie z danymi z pliku:
-
     ./a.out < z01-test.txt
+
+    zapisanie wyniku do pliku:
+    ./a.out > z01-wynik.txt
+
+    oba na raz:
+    ./a.out < z01-test.txt > z01-wynik.txt 
 */
 
 int main()
