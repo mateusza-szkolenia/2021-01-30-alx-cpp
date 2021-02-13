@@ -1,5 +1,10 @@
 #include <iostream>
 
+// Boole
+// Boolean
+// boolean
+// bool
+
 int main() {
     bool prawda = true;
     bool falsz = false;
