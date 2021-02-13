@@ -11,7 +11,7 @@ int main()
     const int ILE = 10;
     int liczby[ILE];
 
-    int suma = 0;
+    int suma;
     int maks, mini;
     double srednia;
 
@@ -19,6 +19,8 @@ int main()
         std::cin >> liczby[i];
     }
 
+    // obowiązkowe inicjowanie zmiennych
+    suma = 0;
     maks = liczby[0];
     mini = liczby[0];
 
