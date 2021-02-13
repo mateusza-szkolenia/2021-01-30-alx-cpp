@@ -8,3 +8,6 @@ A na koniec poda:
 - ich sumę
 - ich średnią (może być zmiennoprzecinkowa)
 
+## Dodatkowe
+- Napisać ile liczb jest większych od średniej a ile mniejszych.
+- Wypisać podane liczby, przy każdej pisząc czy jest mniejsza,większa czy równa średniej.
