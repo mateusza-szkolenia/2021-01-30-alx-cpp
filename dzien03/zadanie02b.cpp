@@ -7,16 +7,20 @@ int k6(){
     // zwraca 1, 2, 3, 4, 5 lub 6
 }
 
+int nk6(int n){
+    int wynik = 0;
+    for(int i=0; i<n; i++){
+        wynik += k6();
+    }
+    return wynik;
+}
+
 int main(){
     const int ILE_RZUTOW = 100;
-    const int MAKSYMALNY_WYNIK = 6;
+    const int ILE_KOSTEK = 4;
+    const int MAKSYMALNY_WYNIK = ILE_KOSTEK * 6;
 
     int licznik[MAKSYMALNY_WYNIK+1];
-    // tablica ma 7 komórek:
-    // [0] (nieużywana)
-    // [1] rzut = 1
-    // itd...
-    // [6] rzut = 6
 
     std::srand(std::time(nullptr));
 
@@ -25,9 +29,8 @@ int main(){
     }
 
     for (int i=0; i<ILE_RZUTOW; i++){
-        int wynik = k6();
+        int wynik = nk6(ILE_KOSTEK);
         licznik[wynik]++;
-        //std::cout << k6() << "\n";
     }
 
     for (int i=1; i<=MAKSYMALNY_WYNIK; i++){
