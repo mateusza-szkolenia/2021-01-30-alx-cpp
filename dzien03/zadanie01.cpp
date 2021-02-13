@@ -12,6 +12,7 @@ int main()
     int liczby[ILE];
 
     int suma = 0;
+    double srednia;
 
     for(int i = 0; i < ILE; i += 1){
         std::cin >> liczby[i];
@@ -21,7 +22,10 @@ int main()
         suma += liczby[i];
     }
 
+    srednia = 1.0 * suma / ILE;
+
     std::cout << "Suma: " << suma << "\n";
+    std::cout << "Średnia: " << srednia << "\n";
 
     return 0;
 }
