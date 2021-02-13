@@ -12,14 +12,14 @@ int main()
     int liczby[ILE];
 
     int suma = 0;
-    int maks = 0;
+    int maks;
     double srednia;
 
     for(int i = 0; i < ILE; i += 1){
         std::cin >> liczby[i];
     }
 
-
+    maks = liczby[0];
     for(int i=0; i < ILE; i += 1){
         suma += liczby[i];
         if (liczby[i] > maks){
