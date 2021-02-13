@@ -1,5 +1,31 @@
 #include <iostream>
 
+/* deklaracje typów i funkcji */
+
+struct Osoba;
+double bmi(double, double);
+double bmi_osoby(Osoba);
+void wypisz_osobe(Osoba);
+
+/* definicje */
+
+struct Osoba {
+    std::string imie;
+    std::string nazwisko;
+    double waga;
+    double wzrost;
+};
+
+double bmi_osoby(Osoba osoba){
+    return bmi(osoba.waga, osoba.wzrost);
+}
+
+void wypisz_osobe(Osoba osoba){
+    std::cout << osoba.imie << " " << osoba.nazwisko << ": "
+        << osoba.waga << " " << osoba.wzrost << " "
+        << bmi_osoby(osoba) << "\n";
+}
+
 double bmi(double waga, double wzrost){
     // Na podstawie wzoru z Wikipedii:
     // https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a
@@ -10,24 +36,6 @@ double bmi(double waga, double wzrost){
        2^8 -- tak często piszą informatycy, ale nie oznacza to potęgowania w C/C++
        2**8 -- notacja z języka Python, też nie działa w C/C++
     */
-}
-
-struct Osoba {
-    std::string imie;
-    std::string nazwisko;
-    double waga;
-    double wzrost;
-};
-
-
-double bmi_osoby(Osoba osoba){
-    return bmi(osoba.waga, osoba.wzrost);
-}
-
-void wypisz_osobe(Osoba osoba){
-    std::cout << osoba.imie << " " << osoba.nazwisko << ": "
-        << osoba.waga << " " << osoba.wzrost << " "
-        << bmi_osoby(osoba) << "\n";
 }
 
 int main(){
