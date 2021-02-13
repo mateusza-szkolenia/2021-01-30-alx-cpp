@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    const int ROZMIAR_TABLICY = 10;
+    const int ROZMIAR_TABLICY = 20;
     int licz[ROZMIAR_TABLICY];
 
     for (int i = 0; i < ROZMIAR_TABLICY; i += 1) {
