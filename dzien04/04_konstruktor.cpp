@@ -71,11 +71,6 @@ struct Ulamek
         mianownik /= x;
     }
 
-    void inicjuj(const int l, const int m){
-        mianownik = m;
-        licznik = l;
-    }
-
 };
 
 void napiszUlamek(const Ulamek &u){
