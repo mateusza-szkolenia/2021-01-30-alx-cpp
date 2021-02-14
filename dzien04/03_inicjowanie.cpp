@@ -61,6 +61,11 @@ struct Ulamek
         mianownik /= x;
     }
 
+    void inicjuj(const int l, const int m){
+        mianownik = m;
+        licznik = l;
+    }
+
 };
 
 void napiszUlamek(const Ulamek &u){
@@ -72,11 +77,8 @@ int main()
 {
     Ulamek u1, u2, u3, u4, u5, u6;
 
-    u1.licznik = 1;
-    u1.mianownik = 8;
-
-    u2.licznik = 3;
-    u2.mianownik = 8;
+    u1.inicjuj(1, 7);
+    u2.inicjuj(3, 7);
 
     // Było tak:
     /*
