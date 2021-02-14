@@ -1,5 +1,8 @@
 #include <iostream>
 
+// Uruchamiać z przekierowaniem do pliku:
+// ./a.out > plik.pnm
+
 int main()
 {
     int w=64, h=64;
