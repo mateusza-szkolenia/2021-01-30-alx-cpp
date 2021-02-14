@@ -6,12 +6,12 @@ struct Ulamek
     int mianownik;
 };
 
-void wypisz(Ulamek &u)
+void wypisz(const Ulamek &u)
 {
     std::cout << u.licznik << "/" << u.mianownik << "\n";
 }
 
-Ulamek mnoz(Ulamek &u1, Ulamek &u2)
+Ulamek mnoz(const Ulamek &u1, const Ulamek &u2)
 {
     Ulamek wynik;
     wynik.licznik = u1.licznik * u2.licznik;
@@ -19,7 +19,7 @@ Ulamek mnoz(Ulamek &u1, Ulamek &u2)
     return wynik;
 }
 
-Ulamek dodaj(Ulamek &u1, Ulamek &u2)
+Ulamek dodaj(const Ulamek &u1, const Ulamek &u2)
 {
     Ulamek wynik;
     wynik.licznik = u1.licznik * u2.mianownik + u2.licznik * u1.mianownik;
