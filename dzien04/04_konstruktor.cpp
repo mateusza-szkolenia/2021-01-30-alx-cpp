@@ -12,8 +12,7 @@ struct Ulamek
     int licznik;
     int mianownik;
 
-    Ulamek(){
-        std::cout << "Hej! Jestem nowym Ulamkiem!\n";
+    Ulamek() : Ulamek(0, 1){
     }
 
     Ulamek(int l, int m){
@@ -90,6 +89,7 @@ int main()
     Ulamek u2{7, 17};
     Ulamek u3, u4, u5, u6;
 
+    u3.wypisz();
     std::cout << "Dotychczas powinno być 6 Ulamków\n";
 
     // Było tak:
