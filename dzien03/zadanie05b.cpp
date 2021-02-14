@@ -7,6 +7,11 @@ struct Punkt {
     double y;
 };
 
+void inicjuj_punkt(Punkt *p){
+    (*p).x = std::rand() % 401 - 200;
+    (*p).y = std::rand() % 401 - 200;
+}
+
 int main(){
     const int N = 100;
     int licznik_cwiartki[4] = {0, 0, 0, 0};
@@ -15,8 +20,7 @@ int main(){
     Punkt punkty[N];
 
     for (int i=0; i<N; i++){
-        punkty[i].x = std::rand() % 201 - 100;
-        punkty[i].y = std::rand() % 201 - 100;
+        inicjuj_punkt(&punkty[i]);
     }
 
     for (int i=0; i<N; i++){
