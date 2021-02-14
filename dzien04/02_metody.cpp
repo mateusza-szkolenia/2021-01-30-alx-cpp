@@ -43,5 +43,8 @@ int main()
     u4 = dodaj(u1, u2);
 
     u1.wypisz();
+    u2.wypisz();
+    u3.wypisz();
+    u4.wypisz();
 
 }
