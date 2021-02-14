@@ -30,6 +30,21 @@ int sprawdz_cwiartke(Punkt *p){
     return -1;
 }
 
+void zlicz_punkty_na_oic(Punkt *punkty, int ile, int *osie, int *cwiartki)
+{
+    for (int i=0; i<ile; i++){
+        int ktora_os = sprawdz_os(&punkty[i]);
+        if (ktora_os != -1){
+            osie[ktora_os]++;
+            continue;
+        }
+        int ktora_cw = sprawdz_cwiartke(&punkty[i]);
+        if (ktora_cw != -1){
+            cwiartki[ktora_cw]++;
+        }
+    }
+}
+
 int main(){
     const int N = 100;
     int licznik_cwiartki[4] = {0, 0, 0, 0};
@@ -38,18 +53,7 @@ int main(){
     Punkt punkty[N];
 
     inicjuj_punkty(punkty, N);
-
-    for (int i=0; i<N; i++){
-        int ktora_os = sprawdz_os(&punkty[i]);
-        if (ktora_os != -1){
-            licznik_osi[ktora_os]++;
-            continue;
-        }
-        int ktora_cw = sprawdz_cwiartke(&punkty[i]);
-        if (ktora_cw != -1){
-            licznik_cwiartki[ktora_cw]++;
-        }
-    }
+    zlicz_punkty_na_oic(punkty, N, licznik_osi, licznik_cwiartki);
 
     for (int i=0; i<N; i++){
         std::cout << i << ": " << punkty[i].x << ", " << punkty[i].y << "\n";
