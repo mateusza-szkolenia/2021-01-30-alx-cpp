@@ -6,6 +6,9 @@ struct Ulamek
     int mianownik;
 };
 
+void wypisz(Ulamek u){
+    std::cout << u.licznik << "/" << u.mianownik << "\n";
+}
 
 int main()
 {
@@ -18,6 +21,7 @@ int main()
     u2.licznik = 1;
     u2.mianownik = 4;
 
-    std::cout << u1.licznik << "/" << u1.mianownik << "\n";
+    wypisz(u1);
+    wypisz(u2);
 
 }
