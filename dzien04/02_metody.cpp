@@ -1,5 +1,12 @@
 #include <iostream>
 
+int gcd(const int a, const int b){
+    if (a==0) return b;
+    if (b==0) return a;
+    if (a==b) return a;
+    return (a > b) ? gcd(a-b, b) : gcd(b-a, a);
+}
+
 struct Ulamek
 {
     int licznik;
@@ -13,6 +20,7 @@ struct Ulamek
         Ulamek wynik;
         wynik.licznik = licznik * u2.licznik;
         wynik.mianownik = mianownik * u2.mianownik;
+        wynik.skroc_sie();
         return wynik;
     }
 
@@ -21,7 +29,14 @@ struct Ulamek
         Ulamek wynik;
         wynik.licznik = licznik * u2.mianownik + u2.licznik * mianownik;
         wynik.mianownik = mianownik * u2.mianownik;
+        wynik.skroc_sie();
         return wynik;
+    }
+
+    void skroc_sie(){
+        int x = gcd(licznik, mianownik);
+        licznik /= x;
+        mianownik /= x;
     }
 
 };
@@ -33,11 +48,11 @@ int main()
     Ulamek u3;
     Ulamek u4;
 
-    u1.licznik = 2;
-    u1.mianownik = 3;
+    u1.licznik = 1;
+    u1.mianownik = 8;
 
     u2.licznik = 3;
-    u2.mianownik = 4;
+    u2.mianownik = 8;
 
     // Było tak:
     /*
