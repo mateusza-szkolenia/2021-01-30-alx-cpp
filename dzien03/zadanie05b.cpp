@@ -6,8 +6,8 @@ struct Punkt {
 };
 
 void inicjuj_punkt(Punkt *p){
-    p->x = std::rand() % 21 - 10;
-    p->y = std::rand() % 21 - 10;
+    p->x = (std::rand() % 10000) / 50.0 - 100;
+    p->y = (std::rand() % 10000) / 50.0 - 100;
 }
 
 void inicjuj_punkty(Punkt *punkty, int ile){
