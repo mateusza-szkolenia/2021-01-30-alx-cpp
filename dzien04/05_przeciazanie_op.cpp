@@ -43,7 +43,7 @@ struct Ulamek
         };
     }
 
-    Ulamek dodaj(const Ulamek &u2) const
+    Ulamek operator+ (const Ulamek &u2) const
     {
         return Ulamek {
             licznik * u2.mianownik + u2.licznik * mianownik,
@@ -86,7 +86,7 @@ int main()
     std::cout << "Dotychczas powinno być 6 Ulamków\n";
 
     u3 = u1 * u2;
-    u4 = u1.dodaj(u2);
+    u4 = u1 + u2;
     u5 = u1.odejmij(u2);
     u6 = u1.dziel(u2);
 
