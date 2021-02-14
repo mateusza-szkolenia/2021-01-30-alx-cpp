@@ -11,11 +11,11 @@ struct Ulamek
 {
     int licznik;
     int mianownik;
-    void wypisz()
+    void wypisz() const
     {
         std::cout << licznik << "/" << mianownik << "\n";
     }
-    Ulamek mnoz(const Ulamek &u2)
+    Ulamek mnoz(const Ulamek &u2) const
     {
         Ulamek wynik;
         wynik.licznik = licznik * u2.licznik;
@@ -24,7 +24,7 @@ struct Ulamek
         return wynik;
     }
 
-    Ulamek dziel(const Ulamek &u2)
+    Ulamek dziel(const Ulamek &u2) const
     {
         Ulamek wynik;
         wynik.licznik = licznik * u2.mianownik;
@@ -33,7 +33,7 @@ struct Ulamek
         return wynik;
     }
 
-    Ulamek dodaj(const Ulamek &u2)
+    Ulamek dodaj(const Ulamek &u2) const
     {
         Ulamek wynik;
         wynik.licznik = licznik * u2.mianownik + u2.licznik * mianownik;
@@ -42,7 +42,7 @@ struct Ulamek
         return wynik;
     }
 
-    Ulamek odejmij(const Ulamek &u2)
+    Ulamek odejmij(const Ulamek &u2) const
     {
         Ulamek wynik;
         wynik.licznik = licznik * u2.mianownik - u2.licznik * mianownik;
@@ -62,6 +62,11 @@ struct Ulamek
     }
 
 };
+
+void napiszUlamek(const Ulamek &u){
+    std::cout << "Ulamek wynosi: ";
+    u.wypisz();
+}
 
 int main()
 {
@@ -85,9 +90,8 @@ int main()
     u5 = u1.odejmij(u2);
     u6 = u1.dziel(u2);
 
-    std::cout << "Ułamki:\n";
-    u1.wypisz();
-    u2.wypisz();
+    napiszUlamek(u1);
+    napiszUlamek(u2);
 
     std::cout << "Iloczyn: ";
     u3.wypisz();
