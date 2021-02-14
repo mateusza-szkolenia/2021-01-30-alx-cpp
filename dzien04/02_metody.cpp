@@ -39,8 +39,12 @@ int main()
     u2.licznik = 3;
     u2.mianownik = 4;
 
+    // Jest tak:
     u3 = mnoz(u1, u2);
     u4 = dodaj(u1, u2);
+
+    // TODO Chcemy żeby działało tak:
+    // u3 = u1.mnoz(u2);
 
     u1.wypisz();
     u2.wypisz();
