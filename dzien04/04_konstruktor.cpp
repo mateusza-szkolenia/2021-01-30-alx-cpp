@@ -15,10 +15,10 @@ struct Ulamek
     Ulamek() : Ulamek(0, 1){
     }
 
-    Ulamek(int l, int m){
-        std::cout << "Hej! Jestem nowym Ulamkiem! L=" << l << " M=" << m << "\n";
-        mianownik = m;
-        licznik = l;
+    Ulamek(int licznik, int mianownik){
+        // std::cout << "Hej! Jestem nowym Ulamkiem! " << this << " L=" << licznik << " M=" << mianownik << "\n";
+        this->mianownik = mianownik;
+        this->licznik = licznik;
     }
 
     void wypisz() const
