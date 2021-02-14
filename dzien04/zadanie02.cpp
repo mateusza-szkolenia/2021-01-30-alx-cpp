@@ -19,6 +19,7 @@ struct Ulamek
         // std::cout << "Hej! Jestem nowym Ulamkiem! " << this << " L=" << licznik << " M=" << mianownik << "\n";
         this->mianownik = mianownik;
         this->licznik = licznik;
+        this->skroc_sie();
     }
 
     void wypisz() const
@@ -27,38 +28,34 @@ struct Ulamek
     }
     Ulamek mnoz(const Ulamek &u2) const
     {
-        Ulamek wynik;
-        wynik.licznik = licznik * u2.licznik;
-        wynik.mianownik = mianownik * u2.mianownik;
-        wynik.skroc_sie();
-        return wynik;
+        return Ulamek {
+            licznik * u2.licznik,
+            mianownik * u2.mianownik
+        };
     }
 
     Ulamek dziel(const Ulamek &u2) const
     {
-        Ulamek wynik;
-        wynik.licznik = licznik * u2.mianownik;
-        wynik.mianownik = mianownik * u2.licznik;
-        wynik.skroc_sie();
-        return wynik;
+        return Ulamek {
+            licznik * u2.mianownik,
+            mianownik * u2.licznik
+        };
     }
 
     Ulamek dodaj(const Ulamek &u2) const
     {
-        Ulamek wynik;
-        wynik.licznik = licznik * u2.mianownik + u2.licznik * mianownik;
-        wynik.mianownik = mianownik * u2.mianownik;
-        wynik.skroc_sie();
-        return wynik;
+        return Ulamek {
+            licznik * u2.mianownik + u2.licznik * mianownik,
+            mianownik * u2.mianownik
+        };
     }
 
     Ulamek odejmij(const Ulamek &u2) const
     {
-        Ulamek wynik;
-        wynik.licznik = licznik * u2.mianownik - u2.licznik * mianownik;
-        wynik.mianownik = mianownik * u2.mianownik;
-        wynik.skroc_sie();
-        return wynik;
+        return Ulamek {
+            licznik * u2.mianownik - u2.licznik * mianownik,
+            mianownik * u2.mianownik
+        };
     }
 
     void skroc_sie(){
