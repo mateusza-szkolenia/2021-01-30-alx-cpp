@@ -8,8 +8,8 @@ struct Punkt {
 };
 
 void inicjuj_punkt(Punkt *p){
-    (*p).x = std::rand() % 401 - 200;
-    (*p).y = std::rand() % 401 - 200;
+    p->x = std::rand() % 401 - 200;
+    p->y = std::rand() % 401 - 200;
 }
 
 int main(){
