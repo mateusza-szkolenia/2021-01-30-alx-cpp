@@ -26,7 +26,8 @@ struct Ulamek
     {
         std::cout << licznik << "/" << mianownik << "\n";
     }
-    Ulamek mnoz(const Ulamek &u2) const
+
+    Ulamek operator* (const Ulamek &u2) const
     {
         return Ulamek {
             licznik * u2.licznik,
@@ -84,14 +85,7 @@ int main()
     u3.wypisz();
     std::cout << "Dotychczas powinno być 6 Ulamków\n";
 
-    // Było tak:
-    /*
-    u3 = mnoz(u1, u2);
-    u4 = dodaj(u1, u2);
-    */
-
-    // Teraz jest jak:
-    u3 = u1.mnoz(u2);
+    u3 = u1 * u2;
     u4 = u1.dodaj(u2);
     u5 = u1.odejmij(u2);
     u6 = u1.dziel(u2);
