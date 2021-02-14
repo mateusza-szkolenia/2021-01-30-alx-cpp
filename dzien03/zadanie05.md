@@ -11,3 +11,5 @@ struct Punkt {
 
 Punkt punkty[N];
 ```
+
+![Układ współrzędnych](img/Cartesian_coordinates_2D_PL.svg.png)
