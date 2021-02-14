@@ -7,7 +7,7 @@ Policzyć, ile punktów wypadłow w każdej ćwiartce układu współrzędnych, 
 struct Punkt {
     double x;
     double y;
-}
+};
 
 Punkt punkty[N];
 ```
