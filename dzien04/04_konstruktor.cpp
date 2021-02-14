@@ -11,6 +11,17 @@ struct Ulamek
 {
     int licznik;
     int mianownik;
+
+    Ulamek(){
+        std::cout << "Hej! Jestem nowym Ulamkiem!\n";
+    }
+
+    Ulamek(int l, int m){
+        std::cout << "Hej! Jestem nowym Ulamkiem! L=" << l << " M=" << m << "\n";
+        mianownik = m;
+        licznik = l;
+    }
+
     void wypisz() const
     {
         std::cout << licznik << "/" << mianownik << "\n";
@@ -75,10 +86,11 @@ void napiszUlamek(const Ulamek &u){
 
 int main()
 {
-    Ulamek u1, u2, u3, u4, u5, u6;
+    Ulamek u1 = Ulamek(5, 19);
+    Ulamek u2{7, 17};
+    Ulamek u3, u4, u5, u6;
 
-    u1.inicjuj(1, 7);
-    u2.inicjuj(3, 7);
+    std::cout << "Dotychczas powinno być 6 Ulamków\n";
 
     // Było tak:
     /*
