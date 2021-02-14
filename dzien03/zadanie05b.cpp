@@ -12,6 +12,12 @@ void inicjuj_punkt(Punkt *p){
     p->y = std::rand() % 401 - 200;
 }
 
+void inicjuj_punkty(Punkt *punkty, int ile){
+    for (int i=0; i<ile; i++){
+        inicjuj_punkt(&punkty[i]);
+    }
+}
+
 int main(){
     const int N = 100;
     int licznik_cwiartki[4] = {0, 0, 0, 0};
@@ -19,9 +25,7 @@ int main(){
 
     Punkt punkty[N];
 
-    for (int i=0; i<N; i++){
-        inicjuj_punkt(&punkty[i]);
-    }
+    inicjuj_punkty(punkty, N);
 
     for (int i=0; i<N; i++){
         if (punkty[i].x > 0 && punkty[i].y > 0) licznik_cwiartki[0]++; // I ćwiartka
