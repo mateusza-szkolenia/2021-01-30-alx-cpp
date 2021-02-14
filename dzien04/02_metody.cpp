@@ -4,7 +4,7 @@ int gcd(const int a, const int b){
     if (a==0) return b;
     if (b==0) return a;
     if (a==b) return a;
-    return (a > b) ? gcd(a-b, b) : gcd(b-a, a);
+    return (a > b) ? gcd(a%b, b) : gcd(b%a, a);
 }
 
 struct Ulamek
@@ -24,6 +24,15 @@ struct Ulamek
         return wynik;
     }
 
+    Ulamek dziel(const Ulamek &u2)
+    {
+        Ulamek wynik;
+        wynik.licznik = licznik * u2.mianownik;
+        wynik.mianownik = mianownik * u2.licznik;
+        wynik.skroc_sie();
+        return wynik;
+    }
+
     Ulamek dodaj(const Ulamek &u2)
     {
         Ulamek wynik;
@@ -33,8 +42,21 @@ struct Ulamek
         return wynik;
     }
 
+    Ulamek odejmij(const Ulamek &u2)
+    {
+        Ulamek wynik;
+        wynik.licznik = licznik * u2.mianownik - u2.licznik * mianownik;
+        wynik.mianownik = mianownik * u2.mianownik;
+        wynik.skroc_sie();
+        return wynik;
+    }
+
     void skroc_sie(){
-        int x = gcd(licznik, mianownik);
+        if (mianownik<0){
+            licznik = -licznik;
+            mianownik = -mianownik;
+        }
+        int x = gcd(std::abs(licznik), mianownik);
         licznik /= x;
         mianownik /= x;
     }
@@ -43,10 +65,7 @@ struct Ulamek
 
 int main()
 {
-    Ulamek u1;
-    Ulamek u2;
-    Ulamek u3;
-    Ulamek u4;
+    Ulamek u1, u2, u3, u4, u5, u6;
 
     u1.licznik = 1;
     u1.mianownik = 8;
@@ -63,10 +82,23 @@ int main()
     // Teraz jest jak:
     u3 = u1.mnoz(u2);
     u4 = u1.dodaj(u2);
+    u5 = u1.odejmij(u2);
+    u6 = u1.dziel(u2);
 
+    std::cout << "Ułamki:\n";
     u1.wypisz();
     u2.wypisz();
+
+    std::cout << "Iloczyn: ";
     u3.wypisz();
+
+    std::cout << "Suma: ";
     u4.wypisz();
+
+    std::cout << "Różnica: ";
+    u5.wypisz();
+
+    std::cout << "Iloraz: ";
+    u6.wypisz();
 
 }
