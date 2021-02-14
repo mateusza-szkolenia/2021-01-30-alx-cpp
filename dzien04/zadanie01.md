@@ -4,7 +4,7 @@ Zdefiniuj strukturę `Ulamek` składającą się z dwóch pól typu `int`: `lic
 
 Napisz funkcje `mnoz()` i `dodaj()` przyjmujące dwa parametry typu `Ulamek` i zwracające typ `Ulamek`. Parametry muszą być przekazywane przez referencję.
 
-Napisz funkcję wypisz, która wypisuje `Ulamek` jako np. `3/7`
+Napisz funkcję `wypisz`, która wypisuje `Ulamek` jako np. `3/7`
 
 ```
 Przykład:
