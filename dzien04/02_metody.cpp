@@ -8,23 +8,23 @@ struct Ulamek
     {
         std::cout << licznik << "/" << mianownik << "\n";
     }
+    Ulamek mnoz(const Ulamek &u2)
+    {
+        Ulamek wynik;
+        wynik.licznik = licznik * u2.licznik;
+        wynik.mianownik = mianownik * u2.mianownik;
+        return wynik;
+    }
+
+    Ulamek dodaj(const Ulamek &u2)
+    {
+        Ulamek wynik;
+        wynik.licznik = licznik * u2.mianownik + u2.licznik * mianownik;
+        wynik.mianownik = mianownik * u2.mianownik;
+        return wynik;
+    }
+
 };
-
-Ulamek mnoz(const Ulamek &u1, const Ulamek &u2)
-{
-    Ulamek wynik;
-    wynik.licznik = u1.licznik * u2.licznik;
-    wynik.mianownik = u1.mianownik * u2.mianownik;
-    return wynik;
-}
-
-Ulamek dodaj(const Ulamek &u1, const Ulamek &u2)
-{
-    Ulamek wynik;
-    wynik.licznik = u1.licznik * u2.mianownik + u2.licznik * u1.mianownik;
-    wynik.mianownik = u1.mianownik * u2.mianownik;
-    return wynik;
-}
 
 int main()
 {
@@ -39,12 +39,15 @@ int main()
     u2.licznik = 3;
     u2.mianownik = 4;
 
-    // Jest tak:
+    // Było tak:
+    /*
     u3 = mnoz(u1, u2);
     u4 = dodaj(u1, u2);
+    */
 
-    // TODO Chcemy żeby działało tak:
-    // u3 = u1.mnoz(u2);
+    // Teraz jest jak:
+    u3 = u1.mnoz(u2);
+    u4 = u1.dodaj(u2);
 
     u1.wypisz();
     u2.wypisz();
