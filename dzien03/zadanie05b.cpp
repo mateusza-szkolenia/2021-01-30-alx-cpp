@@ -22,6 +22,14 @@ int sprawdz_os(Punkt *p){
     return -1;
 }
 
+int sprawdz_cwiartke(Punkt *p){
+    if (p->x > 0 && p->y > 0) return 0; // I ćwiartka
+    if (p->x < 0 && p->y > 0) return 1; // II ćwiartka
+    if (p->x < 0 && p->y < 0) return 2; // III ćwiartka
+    if (p->x > 0 && p->y < 0) return 3; // IV ćwiartka
+    return -1;
+}
+
 int main(){
     const int N = 100;
     int licznik_cwiartki[4] = {0, 0, 0, 0};
@@ -37,11 +45,10 @@ int main(){
             licznik_osi[ktora_os]++;
             continue;
         }
-
-        if (punkty[i].x > 0 && punkty[i].y > 0) licznik_cwiartki[0]++; // I ćwiartka
-        if (punkty[i].x < 0 && punkty[i].y > 0) licznik_cwiartki[1]++; // II ćwiartka
-        if (punkty[i].x < 0 && punkty[i].y < 0) licznik_cwiartki[2]++; // III ćwiartka
-        if (punkty[i].x > 0 && punkty[i].y < 0) licznik_cwiartki[3]++; // IV ćwiartka
+        int ktora_cw = sprawdz_cwiartke(&punkty[i]);
+        if (ktora_cw != -1){
+            licznik_cwiartki[ktora_cw]++;
+        }
     }
 
     for (int i=0; i<N; i++){
