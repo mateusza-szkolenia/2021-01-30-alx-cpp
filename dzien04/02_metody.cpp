@@ -4,12 +4,11 @@ struct Ulamek
 {
     int licznik;
     int mianownik;
+    void wypisz()
+    {
+        std::cout << licznik << "/" << mianownik << "\n";
+    }
 };
-
-void wypisz(const Ulamek &u)
-{
-    std::cout << u.licznik << "/" << u.mianownik << "\n";
-}
 
 Ulamek mnoz(const Ulamek &u1, const Ulamek &u2)
 {
@@ -43,9 +42,6 @@ int main()
     u3 = mnoz(u1, u2);
     u4 = dodaj(u1, u2);
 
-    wypisz(u1);
-    wypisz(u2);
-    wypisz(u3);
-    wypisz(u4);
+    u1.wypisz();
 
 }
