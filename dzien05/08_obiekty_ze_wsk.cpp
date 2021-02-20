@@ -8,6 +8,15 @@ class Tablica {
             this->wypelnij(0);
         }
 
+        // konstruktor kopiujący
+        Tablica(const Tablica &t){
+            this->rozmiar = t.rozmiar;
+            this->dane = new int[rozmiar];
+            for(int i=0; i<this->rozmiar; i++){
+                this->dane[i] = t.dane[i];
+            }
+        }
+
         ~Tablica(){
             delete [] this->dane;
         }
@@ -21,6 +30,7 @@ class Tablica {
         }
 
         void wyswietl(){
+            std::cout << "Tablica " << this->dane << ": ";
             for(int i=0; i<this->rozmiar; i++){
                 std::cout << (i?", ":"") << "[" << i << ": " << this->dane[i] << "]";
             }
@@ -60,12 +70,20 @@ class Tablica {
 };
 
 int main(){
-    Tablica tab{20};
-
+    Tablica tab{10};
+    
     tab.wypelnij(777);
     tab.wypelnij_zakres(3, 7, 1999);
 
-    tab.zmien_rozmiar(24);
+    tab.zmien_rozmiar(11);
 
+    tab.wyswietl();
+
+    Tablica tab2 = tab;
+    tab2.wyswietl();
+
+    tab.wypelnij_zakres(2,7,1111);
+
+    tab2.wyswietl();
     tab.wyswietl();
 }
