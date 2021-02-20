@@ -16,3 +16,7 @@ int main(){
 ```
 
 Ma wyświetlić tablicę z elementami od 0 do 9.
+
+Stworzyć metody pomocnicze:
+- `wypelnij(int wartosc)` - wypełnia całą tablicę daną wartością
+- `wypelnij_zakres(int od, int do, int wartość)` - wypełnia zakres komórek daną wartością
