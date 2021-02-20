@@ -2,7 +2,7 @@
 
 class Tablica {
     public:
-        Tablica(int rozmiar){
+        Tablica(int rozmiar=0){
             this->rozmiar = rozmiar;
             this->dane = new int[rozmiar];
             this->wypelnij(0);
@@ -32,6 +32,13 @@ class Tablica {
                 this->dane[i] = t.dane[i];
             }
             return *this;
+        }
+
+        Tablica operator+ (Tablica &t){
+            Tablica nt;
+            nt.rozszerz(*this);
+            nt.rozszerz(t);
+            return nt;
         }
 
         ~Tablica(){
@@ -99,15 +106,17 @@ class Tablica {
 };
 
 int main(){
-    Tablica tab{10};
+    Tablica tab{3};
     tab.wypelnij(10);
 
     Tablica tab2{5};
     tab2.wypelnij(5);
     
-    tab.rozszerz(tab2);
+    //tab.rozszerz(tab2);
+    //tab.wyswietl();
 
-    tab.wyswietl();
+    Tablica tab3 = tab + tab2;
+    tab3.wyswietl();
 
     // chciałbym aby to tworzyło tablicę łaczącą pierwszą z drugą
     // 10 10 10 10 ... 10 5 5 5 5 5 
