@@ -21,6 +21,13 @@ class Tablica {
         int daj(int pozycja){
             return czy_poprawna_pozycja(pozycja) ? this->dane[pozycja] : -1;
         }
+
+        void wyswietl(){
+            for(int i=0; i<this->rozmiar; i++){
+                std::cout << (i?", ":"") << "[" << i << ": " << this->dane[i] << "]";
+            }
+            std::cout << "\n";
+        }
     private:
         int rozmiar;
         int *dane;
@@ -29,26 +36,10 @@ class Tablica {
         }
 };
 
-void akcja(){
+int main(){
     Tablica tab{20};
 
-    tab.ustaw(-1000000000, 100); // zostanie zignorowane
-    tab.ustaw(5, 17);
-    tab.ustaw(60000000, 100); // też zignorowane
+    tab.ustaw(3, 1999);
 
-    for(int i=-3; i<30; i++){
-        std::cout << i << ": " << tab.daj(i) << "; ";
-    }
-    std::cout << "\n";
+    tab.wyswietl();
 }
-
-int main(){
-    for(int j=0; j<30000; j++){
-        akcja();
-    }
-}
-
-// można zobaczyć czy nie ma wycieków narzędziem valgrind
-//
-// sudo apt install valgrind
-// valgrind ./a.out
