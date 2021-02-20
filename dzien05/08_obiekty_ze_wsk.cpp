@@ -17,6 +17,18 @@ class Tablica {
             }
         }
 
+        // kopiujący operator przypisania
+        
+        Tablica& operator= (const Tablica &t){
+            delete [] this->dane;
+            this->rozmiar = t.rozmiar;
+            this->dane = new int[this->rozmiar];
+            for(int i=0; i<this->rozmiar; i++){
+                this->dane[i] = t.dane[i];
+            }
+            return *this;
+        }
+
         ~Tablica(){
             delete [] this->dane;
         }
@@ -79,9 +91,10 @@ int main(){
 
     tab.wyswietl();
 
-    Tablica tab2 = tab;
+    Tablica tab2{5};
     tab2.wyswietl();
 
+    tab2 = tab;
     tab.wypelnij_zakres(2,7,1111);
 
     tab2.wyswietl();
