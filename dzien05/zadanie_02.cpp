@@ -5,9 +5,7 @@ class Tablica {
         Tablica(int rozmiar){
             this->rozmiar = rozmiar;
             this->dane = new int[rozmiar];
-            for (int i=0; i<rozmiar; i++){
-                this->dane[i] = 0;
-            }
+            this->wypelnij(0);
         }
 
         ~Tablica(){
@@ -30,12 +28,27 @@ class Tablica {
         }
         void zmien_rozmiar(int n){
             int *nowedane = new int[n];
-            for (int i=0; i<n; i++){
+            
+            for (int i=0; i<(n < this->rozmiar ? n : this->rozmiar); i++){
                 nowedane[i] = czy_poprawna_pozycja(i) ? this->dane[i] : 0;
             }
             delete [] this->dane;
             this->dane = nowedane;
+            
+            if (n > this->rozmiar){
+                this->wypelnij_zakres(this->rozmiar, n, 0);
+            }
             this->rozmiar = n;
+        }
+
+        void wypelnij_zakres(int poz_od, int poz_do, int wartosc){
+            for(int i=poz_od; i<poz_do; i++){
+                this->dane[i] = wartosc;
+            }
+        }
+
+        void wypelnij(int wartosc){
+            wypelnij_zakres(0, this->rozmiar, wartosc);
         }
 
     private:
@@ -49,9 +62,10 @@ class Tablica {
 int main(){
     Tablica tab{20};
 
-    tab.ustaw(3, 1999);
+    tab.wypelnij(777);
+    tab.wypelnij_zakres(3, 7, 1999);
 
-    tab.zmien_rozmiar(4);
+    tab.zmien_rozmiar(24);
 
     tab.wyswietl();
 }
