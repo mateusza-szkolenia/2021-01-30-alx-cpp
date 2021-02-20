@@ -29,6 +29,12 @@ class Tablica {
             std::cout << "\n";
         }
         void zmien_rozmiar(int n){
+            int *nowedane = new int[n];
+            for (int i=0; i<n; i++){
+                nowedane[i] = czy_poprawna_pozycja(i) ? this->dane[i] : 0;
+            }
+            delete [] this->dane;
+            this->dane = nowedane;
             this->rozmiar = n;
         }
 
@@ -45,7 +51,7 @@ int main(){
 
     tab.ustaw(3, 1999);
 
-    tab.zmien_rozmiar(10);
+    tab.zmien_rozmiar(4);
 
     tab.wyswietl();
 }
