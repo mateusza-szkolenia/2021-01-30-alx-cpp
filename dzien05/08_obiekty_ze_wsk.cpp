@@ -20,6 +20,11 @@ class Tablica {
         // kopiujący operator przypisania
         
         Tablica& operator= (const Tablica &t){
+            // zabezpieczenie przed sytuacja t = t;
+            
+            if (this->dane == t.dane){
+                return *this;
+            }
             delete [] this->dane;
             this->rozmiar = t.rozmiar;
             this->dane = new int[this->rozmiar];
@@ -95,6 +100,7 @@ int main(){
     tab2.wyswietl();
 
     tab2 = tab;
+    tab2 = tab2;
     tab.wypelnij_zakres(2,7,1111);
 
     tab2.wyswietl();
