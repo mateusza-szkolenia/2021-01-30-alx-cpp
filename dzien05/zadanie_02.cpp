@@ -28,6 +28,10 @@ class Tablica {
             }
             std::cout << "\n";
         }
+        void zmien_rozmiar(int n){
+            this->rozmiar = n;
+        }
+
     private:
         int rozmiar;
         int *dane;
@@ -40,6 +44,8 @@ int main(){
     Tablica tab{20};
 
     tab.ustaw(3, 1999);
+
+    tab.zmien_rozmiar(10);
 
     tab.wyswietl();
 }
