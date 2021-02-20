@@ -78,11 +78,23 @@ class Tablica {
             wypelnij_zakres(0, this->rozmiar, wartosc);
         }
 
+        void rozszerz(Tablica &t){
+            int stary_rozmiar = this->rozmiar;
+            // zwiększ this->rozmiar o t.rozmiar
+            // przepisz elementy z t do this
+            this->zmien_rozmiar(this->rozmiar + t.rozmiar);
+            // this->dane [60 61 62 63] r=4
+            // t.dane-> [78 79 80]
+            for (int i=0; i<t.rozmiar; i++){
+                this->ustaw(stary_rozmiar+i, t.daj(i));
+            }
+        }
+
     private:
         int rozmiar;
         int *dane;
         bool czy_poprawna_pozycja(int pozycja){
-            return pozycja >= 0 && pozycja < rozmiar;
+            return (pozycja >= 0) && (pozycja < rozmiar);
         }
 };
 
@@ -93,8 +105,12 @@ int main(){
     Tablica tab2{5};
     tab2.wypelnij(5);
     
+    tab.rozszerz(tab2);
+
+    tab.wyswietl();
+
     // chciałbym aby to tworzyło tablicę łaczącą pierwszą z drugą
     // 10 10 10 10 ... 10 5 5 5 5 5 
-    Tablica tab3 = tab + tab2;
+    //Tablica tab3 = tab + tab2;
 
 }
