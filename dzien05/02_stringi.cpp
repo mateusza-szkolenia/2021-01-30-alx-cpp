@@ -13,7 +13,7 @@ int main(){
     a2 = 'A' + 5; // piąta litera po A czyli F, czyli kod 70
 
     std::string imie = "Ala";
-    std::string zwierze = "koty";
+    std::string zwierze = "犬";
     std::string zdanie;
     int n = 102;
     std::string ile = std::to_string(n);
@@ -24,6 +24,7 @@ int main(){
 
     // konwersja typu char na int, spowoduje wyświetlenie kodu (liczby) a nie znaku ASCII
     std::cout << (int)a2 << "\n";
+    std::cout << "Rozmiar chińskiego zwierza: " << zwierze.size() << "\n";
 
     std::cout << imie << "\n";
     std::cout << imie.size() << "\n";
@@ -36,7 +37,8 @@ int main(){
     std::cout << zdanie.at(4) << "\n";
     std::cout << zdanie[2] << "\n";
 
-    zdanie[8+4] = 'a';
+    // to już jest destrukcyjne dla UTF-8
+    //zdanie[8+4] = 'a';
 
     std::cout << zdanie << "\n";
 
