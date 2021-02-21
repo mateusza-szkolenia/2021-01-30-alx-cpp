@@ -1,9 +1,8 @@
 #include <iostream>
 
-// zmienna globalna - można ją zmieniać z dowolnego miejsca w programie
-int licznik = 0;
-
 void powitanie(std::string imie){
+    // zmienna statyczna
+    static int licznik = 0;
     std::cout << "Witaj, " << imie << " (" << licznik << ")\n";
     licznik++;
 }
@@ -13,5 +12,6 @@ int main(){
     powitanie("Michal");
     powitanie("Piotr");
 
-    std::cout << "n wynosi: " << licznik << "\n";
+    // z main() nie mam dostępu do tej zmiennej
+    //std::cout << "n wynosi: " << licznik << "\n";
 }
