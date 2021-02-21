@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Tablica.hpp"
 
+#define DEBUG
+
 Tablica::Tablica(int rozmiar){
     this->rozmiar = rozmiar;
     this->dane = new int[rozmiar];
@@ -62,11 +64,26 @@ void Tablica::wyswietl(){
 }
 
 void Tablica::zmien_rozmiar(int n){
+    #ifdef DEBUG
+    std::cout << "ALOKACJA PAMIĘCI\n";
+    #endif
     int *nowedane = new int[n];
     
+    #ifdef DEBUG
+    std::cout << "PRZEPISYWANIE DO NOWEGO OBSZARU:";
+    #endif
+
     for (int i=0; i<(n < this->rozmiar ? n : this->rozmiar); i++){
         nowedane[i] = czy_poprawna_pozycja(i) ? this->dane[i] : 0;
+        #ifdef DEBUG
+        std::cout << ".";
+        #endif
     }
+
+    #ifdef DEBUG
+    std::cout << " GOTOWE\n";
+    #endif
+
     delete [] this->dane;
     this->dane = nowedane;
     
@@ -96,6 +113,11 @@ void Tablica::rozszerz(Tablica &t){
     for (int i=0; i<t.rozmiar; i++){
         this->ustaw(stary_rozmiar+i, t.daj(i));
     }
+}
+
+void Tablica::dopisz(int n){
+    this->zmien_rozmiar(this->rozmiar + 1);
+    this->ustaw(this->rozmiar-1, n);
 }
 
 bool Tablica::czy_poprawna_pozycja(int pozycja){

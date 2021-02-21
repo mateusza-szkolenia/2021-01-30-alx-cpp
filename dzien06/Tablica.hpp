@@ -15,6 +15,7 @@ class Tablica {
         void wypelnij(int wartosc);
 
         void rozszerz(Tablica &t);
+        void dopisz(int);
 
     private:
         int rozmiar;
