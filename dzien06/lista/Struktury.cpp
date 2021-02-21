@@ -32,6 +32,11 @@ void Lista::append(double wartosc){
         ne->poprzedni = nullptr;
         ne->nastepny = nullptr;
     }
+    else {
+        this->ostatni->nastepny = ne;
+        ne->poprzedni = this->ostatni;
+        this->ostatni = ne;
+    }
 
 }
 
@@ -41,5 +46,5 @@ ElementListy::ElementListy(double wartosc):
 }
 
 void ElementListy::pokaz() const {
-    std::cout << "* " << this->wartosc << " <" << this->poprzedni << ":" << this->nastepny << ">\n";
+    std::cout << "* " << this->wartosc << "    " << this << "    <" << this->poprzedni << ":" << this->nastepny << ">\n";
 }
