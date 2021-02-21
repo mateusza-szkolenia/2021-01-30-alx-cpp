@@ -24,3 +24,11 @@ std::string Osoba::klasyfikacja_bmi(double bmi){
     if (bmi < 30.0) return "nadwaga";
     return "otyłość";
 }
+
+void Osoba::opisz() const {
+    std::cout << "Osoba: " << imie << " "
+        << waga << " kg, "
+        << wzrost << " m "
+        << "BMI=" << bmi() << " "
+        << klasyfikacja_bmi(bmi()) << "\n";
+}

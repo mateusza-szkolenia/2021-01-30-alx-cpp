@@ -9,6 +9,7 @@ class Osoba {
         static double policzBMI(double, double);
         static std::string klasyfikacja_bmi(double);
         double bmi() const;
+        void opisz() const;
     private:
         std::string imie;
         std::string nazwisko;
