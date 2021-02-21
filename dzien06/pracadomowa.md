@@ -8,4 +8,15 @@ W oparciu o tę klasę napisać program generujacy [zbiory Mandelbrota](https://
 
 [opis kolorowania](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set#Escape_time_algorithm)
 
+# Zadanie 2
+
+(Materiały rozdział 8, str 3)
+
+Stworzyć klasę `Wielokat` (składający się z listy punktów `Punkt`). Stworzyć metodę `obwod()`.
+
+Stworzyć możliwość dodawania kolejnych punktów.
+
+Zaimplementować efektywne zarządzanie pamięcią - alokowanie pamięci na zapas.
+
+(Trzeba osobno przechowywać rozmiar tablicy i pojemność.)
 
