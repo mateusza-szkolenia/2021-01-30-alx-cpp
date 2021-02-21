@@ -7,5 +7,6 @@ int main(){
 
     l1.pokaz();
     l1.append(56.7);
+    l1.append(156.7);
     l1.pokaz();
 }

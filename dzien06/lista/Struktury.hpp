@@ -9,6 +9,7 @@ class ElementListy {
         ElementListy *poprzedni;
 
         ElementListy(double);
+        void pokaz() const;
 };
 
 class Lista {

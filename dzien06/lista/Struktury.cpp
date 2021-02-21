@@ -12,6 +12,13 @@ Lista::Lista():
 void Lista::pokaz() const {
     std::cout << "--[ LISTA ("<< licznik <<") ]--\n";
     std::cout << "<" << this->pierwszy << " .. " << this->ostatni << ">\n";
+
+    ElementListy *biezacy = this->pierwszy;
+    while(biezacy != nullptr){
+        biezacy->pokaz();
+        biezacy = biezacy->nastepny;
+    }
+
     std::cout << "------------------\n";
 }
 
@@ -31,4 +38,8 @@ void Lista::append(double wartosc){
 ElementListy::ElementListy(double wartosc):
     wartosc(wartosc)
 {
+}
+
+void ElementListy::pokaz() const {
+    std::cout << "* " << this->wartosc << " <" << this->poprzedni << ":" << this->nastepny << ">\n";
 }
