@@ -3,28 +3,36 @@
 int main(){
 
     int m;
+    int q;
 
     std::cout << "Podaj numer miesiąca: ";
     std::cin >> m;
 
     switch (m){
         case 1:
-            std::cout << "Styczeń\n";
-            break;
         case 2:
-            std::cout << "Luty\n";
-            break;
         case 3:
-            std::cout << "Marzec\n";
+            q = 1;
             break;
         case 4:
-            std::cout << "Kwiecień\n";
-            break;
         case 5:
-            std::cout << "Maj\n";
+        case 6:
+            q = 2;
+            break;
+        case 7:
+        case 8:
+        case 9:
+            q = 3;
+            break;
+        case 10:
+        case 11:
+        case 12:
+            q = 4;
             break;
         default:
-            std::cout << "...\n";
+            q = -1;
     }
+
+    std::cout << "Kwartał: " << q << "\n";
 
 }
