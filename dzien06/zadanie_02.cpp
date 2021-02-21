@@ -6,6 +6,10 @@ int main(){
 
     o1.opisz();
 
+    for(int i=0; i<10; i++){
+        Osoba::generuj().opisz();
+    }
+
     std::cout << Osoba::policzBMI(90, 1.9) << "\n";
     std::cout << Osoba::klasyfikacja_bmi(33.3) << "\n";
 }

@@ -5,7 +5,9 @@ Osoba::Osoba(std::string imie, double waga, double wzrost){
     this->imie = imie;
     this->waga = waga;
     this->wzrost = wzrost;
+    #ifdef DEBUG
     std::cout << "Hej, nazywam sie " << imie << "\n";
+    #endif
 }
 
 double Osoba::bmi() const {
@@ -31,4 +33,14 @@ void Osoba::opisz() const {
         << wzrost << " m "
         << "BMI=" << bmi() << " "
         << klasyfikacja_bmi(bmi()) << "\n";
+}
+
+Osoba Osoba::generuj(){
+    std::string imie = "Anonim #";
+    double waga = 50.0 + (std::rand() % 500)/10.0;
+    double wzrost = 1.4 + (std::rand() % 60)/100.0;
+
+    Osoba o{imie, waga, wzrost};
+
+    return o;
 }
