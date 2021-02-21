@@ -1,6 +1,6 @@
 class Tablica {
     public:
-        Tablica(int);
+        Tablica(int rozmiar=0);
         Tablica(const Tablica &t);
         Tablica& operator= (const Tablica &t);
         Tablica operator+ (Tablica &t);

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Tablica.hpp"
 
-Tablica::Tablica(int rozmiar=0){
+Tablica::Tablica(int rozmiar){
     this->rozmiar = rozmiar;
     this->dane = new int[rozmiar];
     this->wypelnij(0);
