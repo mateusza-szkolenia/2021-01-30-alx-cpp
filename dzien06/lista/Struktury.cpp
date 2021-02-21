@@ -24,24 +24,22 @@ void Lista::pokaz() const {
 
 void Lista::append(double wartosc){
     ElementListy *ne;
-    ne = new ElementListy(wartosc);
-    this->licznik++;
-    if (this->pierwszy == nullptr && this->ostatni == nullptr){
+    ne = new ElementListy(wartosc, this->ostatni, nullptr);
+    if (licznik == 0){
         this->pierwszy = ne;
-        this->ostatni = ne;
-        ne->poprzedni = nullptr;
-        ne->nastepny = nullptr;
     }
     else {
         this->ostatni->nastepny = ne;
-        ne->poprzedni = this->ostatni;
-        this->ostatni = ne;
     }
 
+    this->ostatni = ne;
+    this->licznik++;
 }
 
-ElementListy::ElementListy(double wartosc):
-    wartosc(wartosc)
+ElementListy::ElementListy(double wartosc, ElementListy *p, ElementListy *n):
+    wartosc(wartosc),
+    poprzedni(p),
+    nastepny(n)
 {
 }
 

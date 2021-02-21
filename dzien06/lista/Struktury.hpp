@@ -8,7 +8,7 @@ class ElementListy {
         ElementListy *nastepny;
         ElementListy *poprzedni;
 
-        ElementListy(double);
+        ElementListy(double, ElementListy *poprzedni=nullptr, ElementListy *nastepny=nullptr);
         void pokaz() const;
 };
 
