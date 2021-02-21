@@ -7,3 +7,7 @@ Osoba::Osoba(std::string imie, double waga, double wzrost){
     this->wzrost = wzrost;
     std::cout << "Hej, nazywam sie " << imie << "\n";
 }
+
+double Osoba::bmi() const {
+    return 20.15;
+}

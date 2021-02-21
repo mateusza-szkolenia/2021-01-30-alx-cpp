@@ -6,6 +6,8 @@
 class Osoba {
     public:
         Osoba(std::string, double, double);
+        static double policzBMI(double, double);
+        double bmi() const;
     private:
         std::string imie;
         std::string nazwisko;
