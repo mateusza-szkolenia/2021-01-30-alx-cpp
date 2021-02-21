@@ -20,3 +20,9 @@ Zaimplementować efektywne zarządzanie pamięcią - alokowanie pamięci na zapa
 
 (Trzeba osobno przechowywać rozmiar tablicy i pojemność.)
 
+# Zadanie 3
+
+Rozbudować listę wg uznania:
+ - dopisywanie elementów na danej pozycji
+ - wyszukiwanie elementów
+ - kasownie elementów

@@ -31,14 +31,21 @@ void Lista::append(double wartosc){
     else {
         this->ostatni->nastepny = ne;
     }
-
     this->ostatni = ne;
     this->licznik++;
 }
 
 void Lista::prepend(double wartosc){
-    std::cout << "Not implemented\n";
-    // FIXME
+    ElementListy *ne;
+    ne = new ElementListy(wartosc, nullptr, this->pierwszy);
+    if (licznik == 0){
+        this->ostatni = ne;
+    }
+    else {
+        this->pierwszy->poprzedni = ne;
+    }
+    this->pierwszy = ne;
+    this->licznik++;
 }
 
 ElementListy::ElementListy(double wartosc, ElementListy *p, ElementListy *n):
