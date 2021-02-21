@@ -11,3 +11,7 @@ Osoba::Osoba(std::string imie, double waga, double wzrost){
 double Osoba::bmi() const {
     return 20.15;
 }
+
+double Osoba::policzBMI(double waga, double wzrost) {
+    return waga/wzrost/wzrost;
+}
