@@ -3,8 +3,12 @@
 
 
 class ElementListy {
+    public:
+        double wartosc;
+        ElementListy *nastepny;
+        ElementListy *poprzedni;
 
-
+        ElementListy(double);
 };
 
 class Lista {
@@ -14,8 +18,8 @@ class Lista {
         ElementListy *ostatni;
     public:
         Lista();
-        void pokaz();
-
+        void pokaz() const;
+        void append(double);
 };
 
 #endif
