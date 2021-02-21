@@ -1,17 +1,19 @@
 #include <iostream>
 
-void powitanie(std::string imie){
-    // zmienna statyczna
-    static int licznik = 0;
-    std::cout << "Witaj, " << imie << " (" << licznik << ")\n";
-    licznik++;
+void powitanie(std::string imie, int *plicznik){
+    std::cout << "Witaj, " << imie << " (" << *plicznik << ")\n";
+    (*plicznik)++;
 }
 
 int main(){
-    powitanie("Karol");
-    powitanie("Michal");
-    powitanie("Piotr");
+    int licznik_m=0, licznik_k=0;
 
-    // z main() nie mam dostępu do tej zmiennej
-    //std::cout << "n wynosi: " << licznik << "\n";
+    powitanie("Karol", &licznik_m);
+    powitanie("Michal", &licznik_m);
+    powitanie("Piotr", &licznik_m);
+    powitanie("Anna", &licznik_k);
+    powitanie("Mateusz", &licznik_m);
+
+    std::cout << "M=" << licznik_m << " K=" << licznik_k << "\n";
+
 }
