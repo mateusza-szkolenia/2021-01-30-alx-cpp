@@ -1,5 +1,8 @@
 #include <string>
 
+#ifndef __OSOBA_HPP__
+#define __OSOBA_HPP__
+
 class Osoba {
     public:
         Osoba(std::string, double, double);
@@ -10,3 +13,4 @@ class Osoba {
         double wzrost;  // w metrach
 };
 
+#endif
