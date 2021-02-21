@@ -1,3 +1,5 @@
+#include <string>
+
 class Osoba {
     public:
         Osoba(std::string, double, double);
@@ -7,3 +9,4 @@ class Osoba {
         double waga;    // w kg
         double wzrost;  // w metrach
 };
+
