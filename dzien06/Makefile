@@ -10,3 +10,6 @@ Osoba.o: zadanie_02/Osoba.hpp zadanie_02/Osoba.cpp
 
 zadanie_02.o: zadanie_02.cpp zadanie_02/Osoba.hpp
 	$(CPP) -c zadanie_02.cpp
+
+test: z02
+	./z02
