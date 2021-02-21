@@ -15,3 +15,12 @@ double Osoba::bmi() const {
 double Osoba::policzBMI(double waga, double wzrost) {
     return waga/wzrost/wzrost;
 }
+
+std::string Osoba::klasyfikacja_bmi(double bmi){
+    if (bmi < 16.0) return "wygłodzenie";
+    if (bmi < 17.0) return "wychudzenie";
+    if (bmi < 18.5) return "niedowaga";
+    if (bmi < 25.0) return "OK";
+    if (bmi < 30.0) return "nadwaga";
+    return "otyłość";
+}
