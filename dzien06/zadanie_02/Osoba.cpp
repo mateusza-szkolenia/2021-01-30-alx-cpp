@@ -9,7 +9,7 @@ Osoba::Osoba(std::string imie, double waga, double wzrost){
 }
 
 double Osoba::bmi() const {
-    return 20.15;
+    return policzBMI(this->waga, this->wzrost);
 }
 
 double Osoba::policzBMI(double waga, double wzrost) {
