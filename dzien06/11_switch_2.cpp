@@ -7,19 +7,22 @@ int main(){
     std::cout << "Podaj numer miesiąca: ";
     std::cin >> m;
 
-    std::cout << "Przed tobą jeszcze następujące miesiące: \n";
-
     switch (m){
         case 1:
             std::cout << "Styczeń\n";
+            break;
         case 2:
             std::cout << "Luty\n";
+            break;
         case 3:
             std::cout << "Marzec\n";
+            break;
         case 4:
             std::cout << "Kwiecień\n";
+            break;
         case 5:
             std::cout << "Maj\n";
+            break;
         default:
             std::cout << "...\n";
     }
