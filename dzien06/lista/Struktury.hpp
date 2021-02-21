@@ -9,9 +9,11 @@ class ElementListy {
 
 class Lista {
     private:
+        int licznik;
         ElementListy *pierwszy;
         ElementListy *ostatni;
     public:
+        Lista();
         void pokaz();
 
 };
