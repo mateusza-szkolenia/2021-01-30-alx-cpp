@@ -21,6 +21,7 @@ class Lista {
         Lista();
         void pokaz() const;
         void append(double);
+        void prepend(double);
 };
 
 #endif

@@ -36,6 +36,11 @@ void Lista::append(double wartosc){
     this->licznik++;
 }
 
+void Lista::prepend(double wartosc){
+    std::cout << "Not implemented\n";
+    // FIXME
+}
+
 ElementListy::ElementListy(double wartosc, ElementListy *p, ElementListy *n):
     wartosc(wartosc),
     poprzedni(p),
