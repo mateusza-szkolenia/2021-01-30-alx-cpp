@@ -13,18 +13,20 @@ class Kwadrat {
         }
 };
 
-class Prostokat {
-    double a;
+class Kwadracik : public Kwadrat {
+    public:
+    Kwadracik(const double a): Kwadrat(a){
+    }
+};
+
+class Prostokat : public Kwadrat {
     double b;
     public:
-        Prostokat(const double a, const double b) : a(a), b(b){
+        Prostokat(const double a, const double b) : Kwadrat(a), b(b){
 
         }
         double pole() const {
-            return this->a * this->b;
-        }
-        double get_a() const {
-            return this->a;
+            return this->get_a() * this->b;
         }
         double get_b() const {
             return this->b;
@@ -32,10 +34,13 @@ class Prostokat {
 };
 
 int main(){
-    Kwadrat k1{5};
+    Kwadrat k1;
+    Kwadracik k2{17};
+
     Prostokat p1{3,7};
 
     std::cout << "Kwadrat o boku " << k1.get_a() << " ma pole " << k1.pole() << "\n";
+    std::cout << "Kwadrat o boku " << k2.get_a() << " ma pole " << k2.pole() << "\n";
     std::cout << "Pole prostokata: " << p1.pole() << "\n";
 
 }
