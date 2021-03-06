@@ -10,10 +10,18 @@ SVGImage::SVGImage(int width, int height):
 
 }
 
+std::string SVGImage::to_string() const 
+{
+    std::string result = "";
+    result += "<svg>\n";
+    result += "</svg>\n";
+    return result;
+}
+
 void SVGImage::save_to_file(std::string filename) const
 {
     std::ofstream f;
     f.open(filename);
-    f << "TEST\n";
+    f << this->to_string();
     f.close();
 }

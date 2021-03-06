@@ -10,6 +10,7 @@ class SVGImage {
     public:
         SVGImage(int, int);
         void save_to_file(std::string) const;
+        std::string to_string() const;
 };
 
 #endif
