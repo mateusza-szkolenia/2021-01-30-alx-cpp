@@ -9,8 +9,7 @@ int main(){
 
     img.addElement(r);
     img.addElement(e);
-
-    img.save_to_file("obrazek.svg");
 */
+    img.save_to_file("obrazek.svg");
 
 }

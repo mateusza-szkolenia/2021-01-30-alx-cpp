@@ -1,3 +1,5 @@
+#include <string>
+
 #ifndef SVG_HPP
 #define SVG_HPP
 
@@ -7,6 +9,7 @@ class SVGImage {
 
     public:
         SVGImage(int, int);
+        void save_to_file(std::string) const;
 };
 
 #endif
