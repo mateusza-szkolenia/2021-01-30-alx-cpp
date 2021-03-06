@@ -22,3 +22,9 @@ img.addElement(e);
 
 img.save_to_file("obrazek.svg");
 ```
+
+## pomoce naukowe
+
+- Edytor SVG w przeglądarce: https://editor.method.ac/
+- Edytor Inkscape: https://inkscape.org/
+
