@@ -1,0 +1,8 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <rect id="svg_1" height="260" width="300" y="100" x="100" stroke="blue" fill="yellow" stroke-width="20" />
+
+ <rect id="svg_1" height="60" width="350" y="150" x="10" stroke="rgb(255,0,130)" fill="rgb(60,0,70)" stroke-width="20" />
+
+</svg>
+

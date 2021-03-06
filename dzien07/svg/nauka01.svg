@@ -1,0 +1,12 @@
+<svg width='800' height='600' xmlns='http://www.w3.org/2000/svg'>
+<rect height='260' width='300' y='100' x='100' stroke='rgb(0,0,0)' fill='rgb(255, 100, 255)' stroke-width='2' />
+<rect height='260' width='300' y='100' x='100' stroke='rgb(0,0,0)' fill='rgb(255, 100, 255)' stroke-width='2' />
+<rect height='260' width='300' y='110' x='110' stroke='rgb(0,0,0)' fill='rgb(255, 110, 255)' stroke-width='2' />
+<rect height='260' width='300' y='130' x='130' stroke='rgb(0,0,0)' fill='rgb(255, 130, 255)' stroke-width='2' />
+<rect height='260' width='300' y='160' x='160' stroke='rgb(0,0,0)' fill='rgb(255, 160, 255)' stroke-width='2' />
+<rect height='260' width='300' y='200' x='200' stroke='rgb(0,0,0)' fill='rgb(255, 200, 255)' stroke-width='2' />
+<rect height='260' width='300' y='250' x='250' stroke='rgb(0,0,0)' fill='rgb(255, 250, 255)' stroke-width='2' />
+<rect height='260' width='300' y='310' x='310' stroke='rgb(0,0,0)' fill='rgb(255, 54, 255)' stroke-width='2' />
+<rect height='260' width='300' y='380' x='380' stroke='rgb(0,0,0)' fill='rgb(255, 124, 255)' stroke-width='2' />
+<rect height='260' width='300' y='460' x='460' stroke='rgb(0,0,0)' fill='rgb(255, 204, 255)' stroke-width='2' />
+</svg>
