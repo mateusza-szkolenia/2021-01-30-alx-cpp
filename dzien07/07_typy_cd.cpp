@@ -6,33 +6,41 @@ class Punkt {
     public:
         double x;
         double y;
+        std::string nazwa;
         Punkt(const double x = 0.0, const double y = 0.0) : x(x), y(y){
-
+            this->nazwa = "P" + std::to_string(std::rand());
         }
         static double odleglosc(const Punkt &p1, const Punkt &p2){
             return std::sqrt( (p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) );
         }
         virtual void opis(){
-            std::cout << "Punkt(" << this->x << ", " << this->y << ")\n";
+            std::cout << "Punkt(" << this->x << ", " << this->y << ") " << nazwa << "\n";
         }
 };
 
 class Osada : public Punkt {
     private:
+        std::string n2;
         int populacja;
     public:
         Osada(const double x, const double y, const int populacja):
             Punkt(x, y),
             populacja(populacja)
-        {}
+        {
+            this->n2 = "OOO" + std::to_string(std::rand());
+        }
         void opis() override {
-            std::cout << "Osada(" << this->x << ", " << this->y << ", " << this->populacja << ")\n";
+            std::cout << "Osada(" << this->x << ", " << this->y << ", " << this->populacja << " " << nazwa << "\n";
         }
 };
 
 class Sklep : public Punkt {
     int klienci;
     public:
+        Sklep(const Punkt &p):
+            Punkt(p),
+            klienci(0)
+        {}
         Sklep(const double x, const double y):
             Punkt(x, y),
             klienci(0)
@@ -44,7 +52,7 @@ class Sklep : public Punkt {
             this->klienci = k;
         }
         void opis() override {
-            std::cout << "Sklep(" << this->x << ", " << this->y << ") klienci = " << this->klienci << "\n";
+            std::cout << "Sklep(" << this->x << ", " << this->y << ") klienci = " << this->klienci << " " << nazwa << "\n";
         }
 };
 
@@ -71,7 +79,19 @@ void opisz_punkt2(Punkt &p){
     static_cast<Punkt>(p).opis();
 }
 
+void opisz_punkt3(Punkt &p){
+    // chcialbym, zeby tas funkcja po prostu pisala, czy dana rzecz jest Osada czy Sklepem
+    std::cout << "Zmieniam to w Sklep: ";
+    static_cast<Sklep>(p).opis();
+    std::cout << "Zmienia to w Osade: ";
+    
+    Osada *po1;
+    po1 = (Osada *)&p; // konwersja na siłę
 
+    Osada o1 = *po1;
+    o1.opis();
+
+}
 
 int main(){
     std::srand(std::time(nullptr));
@@ -102,6 +122,10 @@ int main(){
     opisz_punkt2(p3);
     opisz_punkt2(o1);
     opisz_punkt2(s1);
+
+    opisz_punkt3(p3);
+    opisz_punkt3(o1);
+    opisz_punkt3(s1);
 
     std::cout << s1.get_klienci() << "\n";
     std::cout << "std::time(nullptr) == " << std::time(nullptr) << "\n";
