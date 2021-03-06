@@ -66,6 +66,13 @@ void opisz_punkt(Punkt& p){
     p.opis();
 }
 
+void opisz_punkt2(Punkt &p){
+    std::cout << "To coś znajduje się w punkcie: ";
+    static_cast<Punkt>(p).opis();
+}
+
+
+
 int main(){
     std::srand(std::time(nullptr));
 
@@ -91,6 +98,10 @@ int main(){
     opisz_punkt(p3);
     opisz_punkt(o1);
     opisz_punkt(s1);
+
+    opisz_punkt2(p3);
+    opisz_punkt2(o1);
+    opisz_punkt2(s1);
 
     std::cout << s1.get_klienci() << "\n";
     std::cout << "std::time(nullptr) == " << std::time(nullptr) << "\n";
