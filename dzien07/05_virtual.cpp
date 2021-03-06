@@ -12,7 +12,7 @@ class Punkt {
         static double odleglosc(const Punkt &p1, const Punkt &p2){
             return std::sqrt( (p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) );
         }
-        void opis(){
+        virtual void opis(){
             std::cout << "Punkt(" << this->x << ", " << this->y << ")\n";
         }
 };
@@ -25,7 +25,7 @@ class Osada : public Punkt {
             Punkt(x, y),
             populacja(populacja)
         {}
-        void opis(){
+        void opis() override {
             std::cout << "Osada(" << this->x << ", " << this->y << ", " << this->populacja << ")\n";
         }
 };
@@ -43,7 +43,7 @@ class Sklep : public Punkt {
         void set_klienci(const int k){
             this->klienci = k;
         }
-        void opis(){
+        void opis() override {
             std::cout << "Sklep(" << this->x << ", " << this->y << ") klienci = " << this->klienci << "\n";
         }
 };
