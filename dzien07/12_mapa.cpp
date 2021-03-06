@@ -75,24 +75,17 @@ int main(){
         sklepy[i] = losowe_wspolrzedne();
     }
 
+    double najmniejsza_odl = Punkt::odleglosc(osady[0], sklepy[0]);
+
     for (int i=0; i < ile_o; i++){
-        osady[i].opis();
-        double najmniejsza_odl = -1;
-        int nr_sklepu = 0;
         for (int j=0; j < ile_s; j++){
             double odl = Punkt::odleglosc(osady[i], sklepy[j]);
-            if (najmniejsza_odl < 0 || odl < najmniejsza_odl){
+            if (odl < najmniejsza_odl){
                 najmniejsza_odl = odl;
-                nr_sklepu = j;
             }
-            std::cout << "Sklep nr " << j << " odleglosc= " << odl << "\n";
         }
-        std::cout << "And the winner is: " << nr_sklepu << "(" << najmniejsza_odl << ")\n";
-        sklepy[nr_sklepu].klienci += osady[i].populacja;
     }
 
-    for (int i=0; i < ile_s; i++){
-        sklepy[i].opis();
-    }
+    std::cout << "Najmniejsza odl: " << najmniejsza_odl << "\n";
 
 }
