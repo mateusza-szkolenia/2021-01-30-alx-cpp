@@ -18,6 +18,9 @@ std::string SVGImage::to_string() const
     result += "height='" + std::to_string(this->height) + "' ";
     result += "xmlns='http://www.w3.org/2000/svg'";
     result += ">\n";
+
+    // tutaj będą dodawane wszystkie elementy składowe...
+
     result += "</svg>\n";
     return result;
 }
