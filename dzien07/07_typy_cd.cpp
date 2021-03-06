@@ -80,16 +80,31 @@ void opisz_punkt2(Punkt &p){
 }
 
 void opisz_punkt3(Punkt &p){
-    // chcialbym, zeby tas funkcja po prostu pisala, czy dana rzecz jest Osada czy Sklepem
-    std::cout << "Zmieniam to w Sklep: ";
-    static_cast<Sklep>(p).opis();
+    // chcialbym, zeby ta funkcja po prostu pisala, czy dana rzecz jest Osada czy Sklepem
+
+    std::cout << "Co to jest? " << &p << "\n";
+    if (dynamic_cast<Osada *>(&p) != nullptr){
+        std::cout << "Osada";
+    }
+    else if (dynamic_cast<Sklep *>(&p) != nullptr){
+        std::cout << "Sklep";
+    }
+    else if (dynamic_cast<Punkt *>(&p) != nullptr){
+        std::cout << "Punkt";
+    }
+    std::cout << "\n";
+/*
     std::cout << "Zmienia to w Osade: ";
-    
     Osada *po1;
     po1 = (Osada *)&p; // konwersja na siłę
 
     Osada o1 = *po1;
     o1.opis();
+
+    long *pa;
+    plong = po1;
+    std::cout << "Liczba long: " << *pa << "\n";
+*/
 
 }
 
