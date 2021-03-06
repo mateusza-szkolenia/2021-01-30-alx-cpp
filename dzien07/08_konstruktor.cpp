@@ -18,6 +18,6 @@ int main(){
     Ocena o2{7}; 
 
     std::cin >> x;
-    Ocena o3 = x;
+    Ocena o3 = x; // nie zadziała, bo jest explicit
     o3.wypisz();
 }
