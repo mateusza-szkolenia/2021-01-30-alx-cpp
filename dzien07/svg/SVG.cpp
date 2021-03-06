@@ -13,7 +13,11 @@ SVGImage::SVGImage(int width, int height):
 std::string SVGImage::to_string() const 
 {
     std::string result = "";
-    result += "<svg>\n";
+    result += "<svg ";
+    result += "width='" + std::to_string(this->width) + "' ";
+    result += "height='" + std::to_string(this->height) + "' ";
+    result += "xmlns='http://www.w3.org/2000/svg'";
+    result += ">\n";
     result += "</svg>\n";
     return result;
 }
