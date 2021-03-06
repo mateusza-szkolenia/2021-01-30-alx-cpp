@@ -23,13 +23,30 @@ class Osada : public Punkt {
         {}
 };
 
+class Sklep : public Punkt {
+    int klienci;
+    public:
+        Sklep(const double x, const double y):
+            Punkt(x, y),
+            klienci(0)
+        {}
+        int get_klienci() const {
+            return this->klienci;
+        }
+        void set_klienci(const int k){
+            this->klienci = k;
+        }
+};
+
 int main(){
     Punkt p1{4, 20};
     Punkt p2{2, 10};
     Osada o1{0.5, 0.5, 500};
     Osada o2{40, 1, 600};
+    Sklep s1{0, 0};
 
-    std::cout << Punkt::odleglosc(o2, o1) << "\n";
+    std::cout << Punkt::odleglosc(o2, s1) << "\n";
+    std::cout << s1.get_klienci() << "\n";
 
 }
 
