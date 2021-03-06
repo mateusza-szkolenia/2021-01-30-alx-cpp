@@ -61,6 +61,11 @@ void przenies_losowo(Punkt& p){
     p.y = (std::rand() % 10000) / 100.0;
 }
 
+void opisz_punkt(Punkt& p){
+    std::cout << "opisuje punkt: ";
+    p.opis();
+}
+
 int main(){
     std::srand(std::time(nullptr));
 
@@ -82,6 +87,11 @@ int main(){
     p3.opis();
     o1.opis();
     s1.opis();
+
+    opisz_punkt(p3);
+    opisz_punkt(o1);
+    opisz_punkt(s1);
+
     std::cout << s1.get_klienci() << "\n";
     std::cout << "std::time(nullptr) == " << std::time(nullptr) << "\n";
 }
