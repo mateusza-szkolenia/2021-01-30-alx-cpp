@@ -18,6 +18,8 @@ int main(){
 
     img.add_element(e);
     img.add_element(SVGLine{0, 0, 500, 300, "red"});
+    img.add_element(SVGText{250, 280, "Jaka piękna obsługa SVG", "#000000"});
+
     img.save_to_file("obrazek.svg");
 
 }

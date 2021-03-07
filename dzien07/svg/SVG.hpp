@@ -50,4 +50,13 @@ class SVGLine : public SVGElement {
         std::string to_string() const override;
 };
 
+class SVGText : public SVGElement {
+    int x, y;
+    std::string text;
+    std::string fill;
+    public:
+        SVGText(const int, const int, const std::string, const std::string);
+        std::string to_string() const override;
+};
+
 #endif

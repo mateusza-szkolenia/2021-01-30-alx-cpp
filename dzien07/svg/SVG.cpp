@@ -107,3 +107,22 @@ std::string SVGLine::to_string() const
     result += "/>\n";
     return result;
 }
+
+SVGText::SVGText(const int x, const int y, std::string text, const std::string fill):
+    x(x), y(y),
+    text(text),
+    fill(fill)
+{
+
+}
+
+std::string SVGText::to_string() const 
+{
+    std::string result = "";
+    result += "<text ";
+    result += "x='" + std::to_string(this->x) + "' ";
+    result += "y='" + std::to_string(this->y) + "' ";
+    result += "fill='" + this->fill + "' ";
+    result += ">" + text + "</text>";
+    return result;
+}
