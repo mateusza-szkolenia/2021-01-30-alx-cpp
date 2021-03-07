@@ -34,7 +34,7 @@ void SVGImage::save_to_file(std::string filename) const
     f.close();
 }
 
-void SVGImage::add_element(const SVGRect & e)
+void SVGImage::add_element(const SVGElement & e)
 {
     this->inner_xml += e.to_string();
 }
@@ -56,6 +56,31 @@ std::string SVGRect::to_string() const
     result += "height='" + std::to_string(this->height) + "' ";
     result += "x='" + std::to_string(this->x) + "' ";
     result += "y='" + std::to_string(this->y) + "' ";
+    result += "stroke='" + this->stroke + "' ";
+    result += "fill='" + this->fill + "' ";
+    result += "/>\n";
+    return result;
+}
+
+
+
+
+SVGEllipse::SVGEllipse(const int cx, const int cy, const int rx, const int ry, const std::string stroke, const std::string fill):
+    cx(cx), cy(cy),
+    rx(rx), ry(ry),
+    stroke(stroke), fill(fill)
+{
+
+}
+
+std::string SVGEllipse::to_string() const 
+{
+    std::string result = "";
+    result += "<ellipse ";
+    result += "cx='" + std::to_string(this->cx) + "' ";
+    result += "cy='" + std::to_string(this->cy) + "' ";
+    result += "rx='" + std::to_string(this->rx) + "' ";
+    result += "ry='" + std::to_string(this->ry) + "' ";
     result += "stroke='" + this->stroke + "' ";
     result += "fill='" + this->fill + "' ";
     result += "/>\n";

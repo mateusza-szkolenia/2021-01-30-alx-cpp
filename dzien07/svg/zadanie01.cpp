@@ -5,9 +5,8 @@ int main(){
 
 
     SVGRect r{10, 20, 300, 200, "blue", "yellow"};
-/*
-    SVGElipse e{50, 50, 300, 200, "orange", "white"};
-*/
+
+    SVGEllipse e{50, 50, 300, 200, "orange", "white"};
 
     img.add_element(r);
 
@@ -15,9 +14,8 @@ int main(){
         img.add_element(SVGRect{20+i*10, 30+i*10, 400, 100, "yellow", "red"});
     }
 
-/*
-    img.addElement(e);
-*/
+    img.add_element(e);
+
     img.save_to_file("obrazek.svg");
 
 }

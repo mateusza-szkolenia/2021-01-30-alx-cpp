@@ -10,4 +10,5 @@
 <rect width='400' height='100' x='90' y='100' stroke='yellow' fill='red' />
 <rect width='400' height='100' x='100' y='110' stroke='yellow' fill='red' />
 <rect width='400' height='100' x='110' y='120' stroke='yellow' fill='red' />
+<ellipse cx='50' cy='50' rx='300' ry='200' stroke='orange' fill='white' />
 </svg>

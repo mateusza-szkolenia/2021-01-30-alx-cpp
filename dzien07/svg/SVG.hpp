@@ -5,7 +5,12 @@
 
 class SVGRect;
 
-class SVGImage {
+class SVGElement {
+    public:
+        virtual std::string to_string() const = 0;
+};
+
+class SVGImage : public SVGElement {
     int width;
     int height;
 
@@ -14,17 +19,27 @@ class SVGImage {
     public:
         SVGImage(int, int);
         void save_to_file(std::string) const;
-        void add_element(const SVGRect &);
-        std::string to_string() const;
+        void add_element(const SVGElement &);
+        std::string to_string() const override;
+        
 };
 
-class SVGRect {
+class SVGRect : public SVGElement {
     int x, y;
     int width, height;
     std::string stroke, fill;
     public:
         SVGRect(const int, const int, const int, const int, const std::string, const std::string);
-        std::string to_string() const;
+        std::string to_string() const override;
+};
+
+class SVGEllipse : public SVGElement {
+    int cx, cy;
+    int rx, ry;
+    std::string stroke, fill;
+    public:
+        SVGEllipse(const int, const int, const int, const int, const std::string, const std::string);
+        std::string to_string() const override;
 };
 
 #endif
