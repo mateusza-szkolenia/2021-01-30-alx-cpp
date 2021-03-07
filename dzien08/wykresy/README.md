@@ -13,6 +13,7 @@ zapisz_wykres_jako_SVG(w, "wykres1.svg", 800, 600);
 ```
 
 Szkic:
+
 ![wykres](szkic1.png)
 
 ```
