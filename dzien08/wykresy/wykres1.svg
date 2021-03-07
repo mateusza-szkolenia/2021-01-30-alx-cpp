@@ -1,0 +1,9 @@
+<svg width='800' height='600' xmlns='http://www.w3.org/2000/svg'>
+<rect width='33' height='300' x='83' y='10' stroke='black' fill='red' />
+<rect width='33' height='300' x='183' y='10' stroke='black' fill='blue' />
+<rect width='33' height='300' x='283' y='10' stroke='black' fill='green' />
+<rect width='33' height='300' x='383' y='10' stroke='black' fill='green' />
+<rect width='33' height='300' x='483' y='10' stroke='black' fill='#ff9900' />
+<rect width='33' height='300' x='583' y='10' stroke='black' fill='#ffff33' />
+<rect width='33' height='300' x='683' y='10' stroke='black' fill='#dd3399' />
+</svg>
