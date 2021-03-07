@@ -3,7 +3,11 @@
 
 int main(){
     Wykres w;
-    Slupek s1;
+    auto s1 = Slupek{60.5, "A", "red"};
 
-
+/*
+    w.dodaj_slupek();
+    w.dodaj_slupek(Slupek{40, "B", "blue"});
+    w.dodaj_slupek(Slupek{57.7, "C", "green"});
+*/
 }

@@ -1,16 +1,20 @@
+#include <string>
+#include <vector>
+
 #ifndef WYKRESY_HPP
 #define WYKRESY_HPP
 
-class Slupek;
+struct Slupek;
 
-class Wykres {
-
-
-
+struct Wykres {
+    std::vector<Slupek> slupki;
 };
 
-class Slupek {
-
+struct Slupek {
+    double wartosc;
+    std::string etykieta;
+    std::string kolor;
+    Slupek(const double, const std::string, const std::string);
 };
 
 #endif
