@@ -1,6 +1,8 @@
 all: test1
 
-test1: test1.cpp Wykresy.o
+test1: test1.cpp Wykresy.o lib/SVG.o
+
+lib/SVG.o: lib/SVG.cpp lib/SVG.hpp
 
 Wykresy.o: Wykresy.cpp Wykresy.hpp
 

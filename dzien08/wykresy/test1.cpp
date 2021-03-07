@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Wykresy.hpp"
+#include "lib/SVG.hpp"
 
 int main(){
     Wykres w;
