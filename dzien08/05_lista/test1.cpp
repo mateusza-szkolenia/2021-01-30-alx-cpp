@@ -3,13 +3,13 @@
 
 int main(){
 
-    Lista l1;
+    Lista<std::string> l1;
 
     l1.pokaz();
-    l1.append(56.7);
-    l1.append(156.7);
-    l1.append(256.7);
-    l1.append(356.7);
-    l1.prepend(999.999);
+    l1.append("kot");
+    l1.append("pies");
+    l1.append("mysz");
+    l1.append("szczur");
+    l1.prepend("lew");
     l1.pokaz();
 }

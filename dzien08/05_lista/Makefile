@@ -2,7 +2,7 @@ CC = g++
 
 all: test1
 
-test1: Struktury.cpp Struktury.hpp test1.cpp
+test1: test1.cpp Struktury.hpp
 
 run: test1
 	./test1
