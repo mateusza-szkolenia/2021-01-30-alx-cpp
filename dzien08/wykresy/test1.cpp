@@ -27,18 +27,34 @@ void zapisz_wykres_jako_SVG(const Wykres &wykres, const std::string nazwa_pliku,
     int margines = 50;
     double szer_calk = szer - 2 * margines;
     double szer_pola = szer_calk / wykres.slupki.size();
-    double szer_slupka = szer_pola / 3.0;
+    double szer_slupka = szer_pola * 0.8;
     double wys_pola = wys - 2 * margines;
 
     for (auto i=0; i<wykres.slupki.size(); i++){
         svg.add_element(SVGRect{
             static_cast<int>(margines + i*szer_pola + szer_pola/2.0 - szer_slupka/2.0),
-            static_cast<int>(margines),
+            static_cast<int>(margines + (1-(wykres.slupki[i].wartosc / wykres.maks_wartosc)) * wys_pola),
             static_cast<int>(szer_slupka),
             static_cast<int>(wykres.slupki[i].wartosc / wykres.maks_wartosc * wys_pola),
             "black",
             wykres.slupki[i].kolor
         });
+
+        svg.add_element(SVGText{
+            static_cast<int>(margines + i*szer_pola + szer_pola/2.0 - szer_slupka/2.0),
+            static_cast<int>(margines + (1-(wykres.slupki[i].wartosc / wykres.maks_wartosc)) * wys_pola),
+            std::to_string(wykres.slupki[i].wartosc),
+            "black"
+        });
+
+        svg.add_element(SVGText{
+            static_cast<int>(margines + i*szer_pola + szer_pola/2.0 - szer_slupka/2.0),
+            static_cast<int>(margines + wys_pola * 1.03),
+            wykres.slupki[i].etykieta,
+            "black"
+        });
+
+
     }
 
     svg.save_to_file(nazwa_pliku);

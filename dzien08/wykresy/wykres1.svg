@@ -1,9 +1,9 @@
 <svg width='800' height='600' xmlns='http://www.w3.org/2000/svg'>
-<rect width='33' height='500' x='83' y='50' stroke='black' fill='red' />
-<rect width='33' height='330' x='183' y='50' stroke='black' fill='blue' />
-<rect width='33' height='476' x='283' y='50' stroke='black' fill='green' />
-<rect width='33' height='476' x='383' y='50' stroke='black' fill='green' />
-<rect width='33' height='311' x='483' y='50' stroke='black' fill='#ff9900' />
-<rect width='33' height='228' x='583' y='50' stroke='black' fill='#ffff33' />
-<rect width='33' height='146' x='683' y='50' stroke='black' fill='#dd3399' />
-</svg>
+<rect width='80' height='500' x='60' y='50' stroke='black' fill='red' />
+<text x='60' y='50' fill='black' >60.500000</text><text x='60' y='565' fill='black' >A</text><rect width='80' height='330' x='160' y='219' stroke='black' fill='blue' />
+<text x='160' y='219' fill='black' >40.000000</text><text x='160' y='565' fill='black' >B</text><rect width='80' height='476' x='260' y='73' stroke='black' fill='green' />
+<text x='260' y='73' fill='black' >57.700000</text><text x='260' y='565' fill='black' >C</text><rect width='80' height='476' x='360' y='73' stroke='black' fill='green' />
+<text x='360' y='73' fill='black' >57.700000</text><text x='360' y='565' fill='black' >C</text><rect width='80' height='311' x='460' y='238' stroke='black' fill='#ff9900' />
+<text x='460' y='238' fill='black' >37.700000</text><text x='460' y='565' fill='black' >C</text><rect width='80' height='228' x='560' y='321' stroke='black' fill='#ffff33' />
+<text x='560' y='321' fill='black' >27.700000</text><text x='560' y='565' fill='black' >C</text><rect width='80' height='146' x='660' y='403' stroke='black' fill='#dd3399' />
+<text x='660' y='403' fill='black' >17.700000</text><text x='660' y='565' fill='black' >C</text></svg>
