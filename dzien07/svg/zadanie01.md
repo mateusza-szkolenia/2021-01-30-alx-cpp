@@ -7,6 +7,9 @@ Biblioteka ma pozwalać na wygodne tworzenie obrazka zawierającego elementy tak
 - elipsy
 - linie
 - napisy
+- grupy `<g />`
+
+Każdy z elementów ma dać się obracać.
 
 
 Przykład korzystania z biblioteki:
@@ -14,11 +17,18 @@ Przykład korzystania z biblioteki:
 ```
 SVGImage img{500, 300};
 
-Rect r{10, 20, 300, 200, "blue", "yellow"};
-Elipse e{50, 50, 300, 200, "orange", "white"};
+SVGRect r{10, 20, 300, 200, "blue", "yellow"};
+SVGEllipse e{50, 50, 300, 200, "orange", "white"};
 
-img.addElement(r);
-img.addElement(e);
+SVGGroup g;
+g.add_element(SVGRect{20, 20, 300, 300, "green", "black"});
+g.add_element(SVGRect{120, 20, 100, 300, "purple", "black"});
+
+g.rotate(30);
+
+img.add_element(r);
+img.add_element(e);
+img.add_element(g);
 
 img.save_to_file("obrazek.svg");
 ```
