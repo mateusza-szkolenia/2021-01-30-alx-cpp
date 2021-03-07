@@ -8,6 +8,7 @@ struct Slupek;
 
 struct Wykres {
     std::vector<Slupek> slupki;
+    void dodaj_slupek(const Slupek &);
 };
 
 struct Slupek {
@@ -15,6 +16,7 @@ struct Slupek {
     std::string etykieta;
     std::string kolor;
     Slupek(const double, const std::string, const std::string);
+
 };
 
 #endif
