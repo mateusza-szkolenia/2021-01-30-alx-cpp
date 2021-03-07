@@ -8,6 +8,8 @@ int main(){
 
     SVGEllipse e{50, 50, 300, 200, "orange", "white"};
 
+    img.add_element(SVGLine{0, 0, 500, 300, "red"});
+
     img.add_element(r);
 
     for(int i=0; i<10; i++){
@@ -15,7 +17,7 @@ int main(){
     }
 
     img.add_element(e);
-
+    img.add_element(SVGLine{0, 0, 500, 300, "red"});
     img.save_to_file("obrazek.svg");
 
 }

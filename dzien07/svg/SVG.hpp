@@ -42,4 +42,12 @@ class SVGEllipse : public SVGElement {
         std::string to_string() const override;
 };
 
+class SVGLine : public SVGElement {
+    int x1, y1, x2, y2;
+    std::string stroke;
+    public:
+        SVGLine(const int, const int, const int, const int, const std::string);
+        std::string to_string() const override;
+};
+
 #endif

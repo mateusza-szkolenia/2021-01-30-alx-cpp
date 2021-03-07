@@ -86,3 +86,24 @@ std::string SVGEllipse::to_string() const
     result += "/>\n";
     return result;
 }
+
+SVGLine::SVGLine(const int x1, const int y1, const int x2, const int y2, const std::string stroke):
+    x1(x1), y1(y1),
+    x2(x2), y2(y2),
+    stroke(stroke)
+{
+
+}
+
+std::string SVGLine::to_string() const 
+{
+    std::string result = "";
+    result += "<line ";
+    result += "x1='" + std::to_string(this->x1) + "' ";
+    result += "x2='" + std::to_string(this->x2) + "' ";
+    result += "y1='" + std::to_string(this->y1) + "' ";
+    result += "y2='" + std::to_string(this->y2) + "' ";
+    result += "stroke='" + this->stroke + "' ";
+    result += "/>\n";
+    return result;
+}
