@@ -28,13 +28,14 @@ void zapisz_wykres_jako_SVG(const Wykres &wykres, const std::string nazwa_pliku,
     double szer_calk = szer - 2 * margines;
     double szer_pola = szer_calk / wykres.slupki.size();
     double szer_slupka = szer_pola / 3.0;
+    double wys_pola = wys - 2 * margines;
 
     for (auto i=0; i<wykres.slupki.size(); i++){
         svg.add_element(SVGRect{
             static_cast<int>(margines + i*szer_pola + szer_pola/2.0 - szer_slupka/2.0),
-            10,
+            static_cast<int>(margines),
             static_cast<int>(szer_slupka),
-            300,
+            static_cast<int>(wykres.slupki[i].wartosc / wykres.maks_wartosc * wys_pola),
             "black",
             wykres.slupki[i].kolor
         });

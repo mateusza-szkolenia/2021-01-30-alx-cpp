@@ -9,6 +9,8 @@ struct Slupek;
 struct Wykres {
     std::vector<Slupek> slupki;
     void dodaj_slupek(const Slupek &);
+    double maks_wartosc;
+    double min_wartosc;
 };
 
 struct Slupek {
