@@ -1,0 +1,13 @@
+<svg width='500' height='300' xmlns='http://www.w3.org/2000/svg'>
+<rect width='300' height='200' x='10' y='20' stroke='blue' fill='yellow' />
+<rect width='400' height='100' x='20' y='30' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='30' y='40' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='40' y='50' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='50' y='60' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='60' y='70' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='70' y='80' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='80' y='90' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='90' y='100' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='100' y='110' stroke='yellow' fill='red' />
+<rect width='400' height='100' x='110' y='120' stroke='yellow' fill='red' />
+</svg>
