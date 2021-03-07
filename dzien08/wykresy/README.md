@@ -32,3 +32,6 @@ Inne formaty do przemyślenia:
 - PNG
 - HTML
 - itd.
+
+Dodać:
+- wczytywanie danych z pliku
