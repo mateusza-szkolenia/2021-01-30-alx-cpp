@@ -36,9 +36,19 @@ template<typename T>
 Wskaznik<T>::Wskaznik(T* inny_wsk) : licznik{new unsigned{1}}, ptr{inny_wsk} {
 }
 
+//copy and swap idiom
 template<typename T>
 Wskaznik<T>::Wskaznik(T wartosc) : licznik{new unsigned{1}}, ptr{new T{std::move(wartosc)}} {
 }
+
+//move semantics
+
+// {
+//     Wskaznik<int> w, w2;
+//     int x = 9;
+//     w = x;
+//     w2 = 10;
+// }
 
 template<typename T>
 Wskaznik<T>::~Wskaznik() {

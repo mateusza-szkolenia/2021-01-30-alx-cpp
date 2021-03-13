@@ -6,6 +6,8 @@
 // v.dodaj(5); //dodaje 5 na koniec listy
 // v.daj(int n); //zwraca n-ty element z listy
 
+//praca domowa: zmodyfikowac Vector tak, aby dodawanie elementów było w amortyzowanym czasie O(1)
+
 template<typename T>
 class Vector {
 public:
